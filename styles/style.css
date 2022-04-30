@@ -8,20 +8,14 @@
 
 #bg-img{
   position: absolute;
-  background-image: url(/sign-up-form/images/falling-donut-lean-left.png);
-  background-size: contain;
+  background-image: url(/sign-up-form/images/falling-donut-wide-mid.png);
+  background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
 }
-/* left page */
-/* .left-container{
-  background: url(/sign-up-form/images/falling-donos-cropped.png) no-repeat fixed;
-  background-size: contain;
-  position: absolute;
-  width: 40vw;
-  height: 100vh;
-} */
+
 .icon{
   align-self: flex-end;
   background: url(/sign-up-form/images/icon-donut-darker-shadow-cropped.png);
@@ -34,11 +28,12 @@
 
 .logo-body{
   position:absolute;
-  width: 40vw;
+  width: 30vw;
   background: #6e807096;
   opacity: 0.6;
   top: 30vh;
-  height: 100px;
+  left: 5vw;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +42,7 @@
 .logo{
   display: inline-block;
   text-align: center;
-  font-size: 6.5em;
+  font-size: clamp(3rem, 7vw, 8rem) ;
   vertical-align: top;
   color: #e2ccd8;
   font-family: 'Orbitron', sans-serif;
@@ -57,9 +52,10 @@
 /* right page */
 .right-container {
   color: #7a8b7c;
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.35);
   position: absolute;
   left: 40vw;
+  height: 100vh;
 }
 #top-right{
   height: 30vh;
@@ -67,10 +63,13 @@
 #mid-right{
   height: 30vh;
 }
+/* .login{
+  height: 40vh;
+} */
 /*right top space*/
 p#top{
-  font-size: 17px;
-  padding: 90px 25px;
+  font-size: clamp(14px ,17px, 18px);
+  padding: 60px 25px;
   width: 55%;
 }
 
@@ -94,6 +93,14 @@ fieldset>p{
   flex-flow: column;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 fieldset{
   background-color: rgba(255, 255, 255, 0.45);
   border: none;
@@ -103,13 +110,22 @@ fieldset{
 input{
   margin: 0px 40px 10px 10px;
   border-radius: 3px;
-  border: 1px solid #D6D9DC;
+  border: 1.5px solid #c6c7c9b0;
   height: 25px;
+  background: none;
+  padding-left: 8px;
+  color: #7a8b7c;
 }
 input:focus{
   border: 2px solid #e4d7de;
   outline: none;
   box-shadow: none;
+}
+input:valid{
+  background: url(/sign-up-form/images/checkmark.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
 }
 
 label {
@@ -122,8 +138,8 @@ button{
   background-color: #879989;
   /* border: 2px solid #b5a1ad; */
   border: none;
-  color: #e4d7de;
-  padding: 15px 22px;
+  color: #ece5e9;
+  padding: 15px 52px;
   text-align: center;
   text-decoration: none;
   display: block;
@@ -133,18 +149,33 @@ button{
 }
 
 button:hover {
-  background-color: #90a292;
+  /* background-color: #90a292; */
   box-shadow: none;
-  /* box-shadow: inset -2px 0px #ffffff, inset 0px 2px #ffffff; */
-  /* background-color: rgb(98, 209, 163); */
+  transform: scale(1.03);
 }
 button:active {
   background-color: #a1b3a4;
 }
 
 #login{ 
-  display: absolute;
-  padding: 0px 25px;
-  margin-top: 200px;
-  height: 34vh;
+  margin-top: 33vh;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: #58645a;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+a:visited{
+  color: #7a8b7c;
+}
+
+#message{
+  padding-left: 15px;
 }

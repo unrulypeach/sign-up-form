@@ -9,55 +9,74 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Radio+Canada:wght@600&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <title>Sign-up</title>
 </head>
 
 <body>
   <div id="bg-img"></div>
-  <div class="left-container">
-    <div class="logo-body">
-      <p class="logo">d</p><span class="icon"></span><p class="logo">nut</p>
+  <div class="main-content">
+    <div class="left-container">
+      <div class="logo-body">
+        <p class="logo">donuts</p>
+      </div>
     </div>
-  </div>
 
-  <div class="right-container">
-    <div id="top-right">
-      <p id="top">Join this super cool service! You need us, we need you, boom let's make both of our dreams come true. <br> Sign up now to get started. <br><br> Let's do this.</p>
+    <div class="right-container">
+      <div id="top-right">
+        <p id="top">Join this super cool service! You need us, we need you, boom let's make both of our dreams come true. <br> Sign up now to get started. <br><br> Let's do this.</p>
+      </div>
+      <form id="mid-right">
+        <fieldset>
+          <p> Let's get started </p>
+          <div id="input-container">
+            <div class="label-input">
+              <label for="first-name"> FIRST NAME</label>
+              <input type="text" name="first-name" id="first-name" required>
+            </div>
+            <div class="label-input">
+              <label for="last-name">LAST NAME</label>
+              <input type="text" name="last-name" id="last-name" class="left" required>
+            </div>
+            <div class="label-input">
+              <label for="email">EMAIL</label>
+              <input type="email" name="email" id="email" required>
+            </div>
+            <div class="label-input">
+              <label for="phone">PHONE NUMBER</label>
+              <input type="tel" name="phone" id="phone" class="left" required>
+            </div>
+            <div class="label-input">
+              <label for="password">PASSWORD</label>
+              <input type="password" name="password" id="password" onkeyup="check();" required>
+            </div>
+            <div class="label-input">
+              <label for="password-confirm">CONFIRM PASSWORD</label>
+              <input type="password" name="password-confirm" id="password-confirm" class="left" onkeyup="check();" required>
+              <span id="message"></span>
+            </div>
+          </div>
+        </fieldset>
+        <button type="submit"> Create Account</button>
+      </form>
+
+      <div class="login"><p id="login">Already have an account? <a href="">Log in</a></p></div>
     </div>
-    <form id="mid-right">
-      <fieldset>
-        <p> Let's get started </p>
-        <div id="input-container">
-          <div class="label-input">
-            <label for="first-name"> FIRST NAME</label>
-            <input type="text" name="first-name" id="first-name" required>
-          </div>
-          <div class="label-input">
-            <label for="last-name">LAST NAME</label>
-            <input type="text" name="last-name" id="last-name" class="left" required>
-          </div>
-          <div class="label-input">
-            <label for="email">EMAIL</label>
-            <input type="email" name="email" id="email" required>
-          </div>
-          <div class="label-input">
-            <label for="phone">PHONE NUMBER</label>
-            <input type="tel" name="phone" id="phone" class="left" required>
-          </div>
-          <div class="label-input">
-            <label for="password">PASSWORD</label>
-            <input type="password" name="password" id="password" required>
-          </div>
-          <div class="label-input">
-            <label for="password-confirm">CONFIRM PASSWORD</label>
-            <input type="password" name="password-confirm" id="password-confirm" class="left" required>
-          </div>
-        </div>
-      </fieldset>
-      <button type="submit"> Create Account</button>
-    </form>
-
-    <div id="login">Already have an account? <a href="">Log in</a></div>
-  </div>
+</div>
 </body>
+  <script>
+    var check = function() {
+      if(document.getElementById('password').value != '' && document.getElementById('password-confirm').value != ''){
+        if (document.getElementById('password').value == document.getElementById('password-confirm').value) {
+          document.getElementById('message').style.color = '#5a8b7c';
+          document.getElementById('message').innerHTML = 'passwords match';
+        } else {
+          document.getElementById('message').style.color = 'red';
+          document.getElementById('message').innerHTML = 'passwords do not match';
+        }
+      }else{
+        document.getElementById('message').innerHTML = '';
+      }
+    }
+  </script>
 </html>
